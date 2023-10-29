@@ -1,0 +1,53 @@
+POSSIBLE SOLUTIONS FOR THE ARHITECTURE:
+
+The game should maintain a separation of concerns, where the game logic, user interface,
+and the main game loop are modular.
+
+Some architectural patterns that might fit well:
+1. The structure should be a MVC pattern, where the model represents the game logic,
+the view is the GUI, and the controller handles the user input.
+
+-> This one will be used as the Architectural pattern
+
+2. Observer pattern
+This pattern is useful for creating a subscription mechanism to allow multiple objects to listen
+and react to events or actions occurring in your game. For example, you can use this for the GUI to update
+based on changes in the game state.
+
+3. Command Pattern
+This pattern can encapsulate all details of an action, including its parameters, into a command object. This object can be passed around,
+manipulated, and extended, which can be useful for implementing features like undo/redo.
+
+4. Singleton Pattern
+For certain components (like the central game controller),
+it might make sense to only have one instance throughout the application's lifecycle.
+The singleton pattern can ensure that a class has only one instance and provide a global point of access to it.
+
+5. Factory Method Pattern
+If your game pieces have different characteristics or behaviors, you might use this pattern.
+It allows the interface to create objects, but it lets subclasses alter the type of objects that will be created.
+
+6 Memento pattern
+For undoing moves, the memento pattern could be particularly useful.
+It's a way to capture and externalize an object's internal state so that the object can be restored to this state later.
+
+
+SPECIFICATION OF THE GAME
+
+- Involve at least 4 design patterns
+- Game must be playable, implement rules
+- Start from a fresh board
+- Winning conditions when the game ends
+- Implement a simple GUI
+- User should be able only to make valid moves
+- Users alternate between moves. White begins, black continues, and they take turns on every move.
+- It should be possible to undo a move. Also multiple undo should be possible ("undoing"the moves of both players") until the start of the game.
+- There should be a possibility of redo. Also multiple redo should be possible ("redoing" or "replaying the moves of both players")
+  until the last move a player did was redone again.
+- it should be possible to save the state of a game in a file, load it again, and continue playing
+- By reloading and undoing all steps, a complete step-by-step replay of a game should be possible.
+- If a player decides to deviate from previous steps during such a replay, the game
+  should continue normally, like in a regular play. In this case, further redo is not possible
+  (the redo-chain is broken).
+- Implement a computer opponent. It does not have to be very intelligent but
+  should only make valid moves.
