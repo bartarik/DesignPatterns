@@ -79,10 +79,24 @@ Allows dynamic selection of movement logic for different piece types.
 
 ## ✅ How to Run
 
-> _Add your specific setup here if needed (e.g., Java with Gradle/IntelliJ, Python with Tkinter, etc.)_
+To run the Checkers game, follow these steps to set up a Python virtual environment and start the game:
 
-Example (Java):
 ```bash
-javac *.java
-java Main
+# 1. Clone the repository
+git clone https://github.com/bartarik/DesignPatterns.git
 
+# 2. Create a virtual environment
+python -m venv venv
+
+# 3. Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# 4. Install the required dependencies
+pip install -r requirements.txt
+
+# 5. Run the game
+python src/main.py
+```
